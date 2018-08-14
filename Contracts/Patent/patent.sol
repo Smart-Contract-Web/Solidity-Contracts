@@ -44,5 +44,47 @@ contract StandardSertificate is owned {
         return sertificates[student];
     }
     
-    
 }
+
+ contract EWSertificationCenter is owned {
+     
+     string public name;
+     string public description;
+     string public place;
+     
+     mapping (address => bool) courses;
+     
+    function EWSertificationCenter (string _name, string _description, string _place) {
+         
+         name = _name;
+         description = _description;
+         place = _place;
+         
+     }
+     
+     function addCourse (address courseAddress) onlyOwner {
+         courses[courseAddress] = true;
+     }
+     
+     function deleteCourse (address courseAddress) onlyOwner {
+         courses[courseAddress] = false;
+     }
+     
+     function issueSertificate (address courseAddress, address student) onlyOwner {
+         require (student != 0x0);
+         require (courses [courseAddress]);
+         
+         StandardSertificate s = StandardSertificate(courseAddress);
+         s.issue(student);
+     }
+     
+     function checkSertificate (address courseAddress, address student) constant returns (uint) {
+         require (student != 0x0);
+         require (courses[courseAddress]);
+         
+        StandardSertificate s = StandardSertificate (courseAddress);
+        return s.issued(student);
+     }
+ 
+     
+     }
