@@ -9,10 +9,6 @@ define('WP_CACHE', true);
  *
  * This file contains the following configurations:
  *
- * * MySQL settings
- * * Secret keys
- * * Database table prefix
- * * ABSPATH
  *
  * @link https://codex.wordpress.org/Editing_wp-config.php
  *
