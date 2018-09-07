@@ -228,16 +228,16 @@ function decreaseApproval(
     return true;
 }
 }
-/************* BN Token Contract **************/
-contract BNToken is StandardToken, Pausable {
+/************* Countdown protocol Token Contract **************/
+contract CDPToken is StandardToken, Pausable {
 
 using SafeMath for uint256;
 
-string  public name = "BN";
-string  public symbol = "BN";
+string  public name = "CDP";
+string  public symbol = "CDP";
 uint256 constant public decimals = 18;
 uint256 constant dec = 10**decimals;
-uint256 public initialSupply = 50000*dec;
+uint256 public initialSupply = 70000000000*dec;
 uint256 public availableSupply;
 address public crowdsaleAddress;
 
