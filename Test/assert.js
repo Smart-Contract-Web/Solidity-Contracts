@@ -1,4 +1,4 @@
-/* eslint-env node, mocha */
+
 
 const path = require('path');
 const getInstrumentedVersion = require('./../lib/instrumentSolidity.js');
