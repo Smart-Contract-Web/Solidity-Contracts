@@ -97,6 +97,9 @@ describe('asserts and requires', () => {
       assert.deepEqual(mapping[filePath].b, {
         1: [0, 1],
       });
+       assert.deepEqual(mapping[filePath].s, {
+        1: 1,
+      });
       assert.deepEqual(mapping[filePath].s, {
         1: 1,
       });
