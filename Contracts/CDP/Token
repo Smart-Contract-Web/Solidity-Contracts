@@ -131,7 +131,7 @@ mapping(address => uint256) balances;
 uint256 totalSupply_;
 
 function totalSupply() public view returns (uint256) {
-    // function totalSupply() view returns (uint256 totalSupply) EIP
+    
     return totalSupply_;
 }
 
